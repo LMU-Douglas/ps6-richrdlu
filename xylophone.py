@@ -30,4 +30,21 @@ def cost_of_bars(bars):
     
     return None # TODO: Implement this function
 
+def cost_of_bars(bars):
+    bar_list = list(map(int, bars.split()))
+
+    longest = max(bar_list)
+    shortest = min(bar_list)
+
+    needed_bars = list(range(longest, shortest - 1, -1)) 
+
+    existing_set = set(bar_list)
+    total_cost = 0
+    for bar in needed_bars:
+        if bar not in existing_set:
+            total_cost += bar 
+
+    return total_cost
+
+print(cost_of_bars("7 6 5"))
 # Run pytest test_problem_3.py to test the function

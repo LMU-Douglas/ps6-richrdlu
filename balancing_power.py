@@ -24,4 +24,24 @@ def is_power_balanced(n, party):
     
     return None # TODO: Implement this function
 
+def is_power_balanced(n, party):
+    """
+    Checks if power is balanced among three parties based on the number of legislators.
+    """
+    counts = [0, 0, 0, 0]  # Use index 1, 2, 3 (ignore index 0 for simplicity)
+
+    for p in party:
+        counts[p] += 1
+
+    if counts[1] > counts[2] + counts[3]:
+        print("Future One Dominates")
+    elif counts[2] > counts[1] + counts[3]:
+        print("Two-gether Dominates")
+    elif counts[3] > counts[1] + counts[2]:
+        print("Triple Harmony Dominates")
+    else:
+        print("Power Balanced")
+
+is_power_balanced(5, [1, 1, 2, 2, 3])
+
 # Run pytest test_problem_1.py to test the function

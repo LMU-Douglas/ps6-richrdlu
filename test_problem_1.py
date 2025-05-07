@@ -18,3 +18,6 @@ def test_triple_harmony_dominates():
     
 def test_equal():
     assert is_power_balanced(3, "1 2 3") == "Power Balanced" 
+
+    is_power_balanced(5, [1, 1, 2, 2, 3])
+# Output: Power Balanced

@@ -20,4 +20,16 @@ def is_intuitive(element, abreviation):
 
     return None # TODO: Implement this function
 
+def is_intuitive(element, abreviation):
+    element_lower = element.lower()
+    abreviation_lower = abreviation.lower()
+
+    for letter in abreviation_lower:
+        if letter not in element_lower:
+            return "NO"
+    return "YES"
+
+
+print(is_intuitive("Oxygen", "Ogn")) 
+print(is_intuitive("Oxygen", "Od"))
 # Run pytest test_problem_2.py to test the function
